@@ -46,7 +46,8 @@ export function CyberBackground() {
   React.useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d", { alpha: true }) as CanvasRenderingContext2D;
+    const ctx = canvas.getContext("2d", { alpha: true });
+    if (!ctx) return;
 
     const S = stateRef.current;
 
@@ -68,8 +69,6 @@ export function CyberBackground() {
       S.dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
       S.w = Math.floor(window.innerWidth);
       S.h = Math.floor(window.innerHeight);
-      if (!canvas) return;
-      if (!ctx) return;
       canvas.style.width  = S.w + "px";
       canvas.style.height = S.h + "px";
       canvas.width  = Math.floor(S.w * S.dpr);
@@ -169,8 +168,9 @@ export function CyberBackground() {
       ctx.lineWidth = 0.6;
       ctx.stroke();
       // Sweep gradient
-     
- 
+      const sweepGrad = ctx.createConicalGradient
+        ? null  // not widely available
+        : null;
       // Manual sweep arc
       ctx.save();
       ctx.translate(rcx, rcy);

@@ -21,18 +21,25 @@ export function FadeIn({
   );
 }
 
+type PopProps = React.PropsWithChildren<{
+  className?: string;
+  delay?: number;
+}> &
+  Omit<MotionProps, "transition">;
+
 export function Pop({
   children,
   className,
+  delay = 0,
   ...props
-}: React.PropsWithChildren<{ className?: string } & MotionProps>) {
+}: PopProps) {
   return (
     <motion.div
       className={className}
       initial={{ opacity: 0, scale: 0.98 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
+      transition={{ duration: 0.55, ease: "easeOut", delay }}
       {...props}
     >
       {children}

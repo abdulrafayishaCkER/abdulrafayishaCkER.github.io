@@ -23,25 +23,44 @@ const scriptLines = [
 
 function useTypewriter(open: boolean) {
   const [text, setText] = React.useState("");
+
   React.useEffect(() => {
-    if (!open) { setText(""); return; }
+    if (!open) {
+      setText("");
+      return;
+    }
+
     let i = 0;
     const full = scriptLines.join("\n");
+
     const timer = window.setInterval(() => {
-      i++;
+      i += 1;
       setText(full.slice(0, i));
-      if (i >= full.length) window.clearInterval(timer);
+      if (i >= full.length) {
+        window.clearInterval(timer);
+      }
     }, 14);
+
     return () => window.clearInterval(timer);
   }, [open]);
+
   return text;
 }
 
-export function TerminalModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+export function TerminalModal({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) {
   const typed = useTypewriter(open);
 
   React.useEffect(() => {
-    function onKey(e: KeyboardEvent) { if (e.key === "Escape") onClose(); }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") onClose();
+    }
+
     if (open) window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
@@ -55,7 +74,11 @@ export function TerminalModal({ open, onClose }: { open: boolean; onClose: () =>
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
+          <div
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            onClick={onClose}
+          />
+
           <motion.div
             initial={{ y: 12, scale: 0.97, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
@@ -63,7 +86,6 @@ export function TerminalModal({ open, onClose }: { open: boolean; onClose: () =>
             transition={{ duration: 0.22, ease: "easeOut" }}
             className={cn("cyber-panel w-full max-w-2xl overflow-hidden")}
           >
-            {/* Title bar */}
             <div className="flex items-center justify-between border-b border-border/60 bg-card/60 px-4 py-3">
               <div className="flex items-center gap-2.5">
                 <div className="flex gap-1.5">
@@ -71,25 +93,26 @@ export function TerminalModal({ open, onClose }: { open: boolean; onClose: () =>
                   <span className="h-3 w-3 rounded-full bg-yellow-500/70" />
                   <span className="h-3 w-3 rounded-full bg-green-500/70" />
                 </div>
+
                 <div className="flex items-center gap-1.5 font-mono text-xs text-muted">
                   <Terminal className="h-3.5 w-3.5" />
                   bash — abdulrafay@kali ~
                 </div>
               </div>
+
               <button
                 aria-label="Close terminal"
                 onClick={onClose}
-                className="inline-flex h-7 w-7 items-center justify-center rounded border border-border/60 bg-card/30 text-muted hover:text-fg transition-colors"
+                className="inline-flex h-7 w-7 items-center justify-center rounded border border-border/60 bg-card/30 text-muted transition-colors hover:text-fg"
               >
                 <X className="h-3.5 w-3.5" />
               </button>
             </div>
 
-            {/* Terminal body */}
             <div className="bg-black/70 p-5">
-              <pre className="whitespace-pre-wrap font-mono text-xs sm:text-sm leading-relaxed text-green-400/90 min-h-[280px]">
+              <pre className="min-h-[280px] whitespace-pre-wrap font-mono text-xs leading-relaxed text-green-400/90 sm:text-sm">
                 {typed}
-                <span className="cursor-blink ml-0.5 inline-block w-[8px] h-[0.9em] align-middle bg-green-400/80" />
+                <span className="cursor-blink ml-0.5 inline-block h-[0.9em] w-[8px] align-middle bg-green-400/80" />
               </pre>
             </div>
           </motion.div>

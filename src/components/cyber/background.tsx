@@ -69,6 +69,7 @@ export function CyberBackground() {
       S.dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
       S.w = Math.floor(window.innerWidth);
       S.h = Math.floor(window.innerHeight);
+      if (!canvas) return; 
       canvas.style.width  = S.w + "px";
       canvas.style.height = S.h + "px";
       canvas.width  = Math.floor(S.w * S.dpr);

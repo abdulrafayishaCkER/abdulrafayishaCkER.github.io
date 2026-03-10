@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" style="background:#0a0f0d">
+  <defs>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00e676" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00e676" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <!-- Grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00e676" stroke-width="0.3" opacity="0.15"/>
+  </pattern>
+  <rect width="800" height="420" fill="url(#grid)"/>
+  <rect width="800" height="420" fill="url(#glow1)"/>
+
+  <!-- Central shield -->
+  <g transform="translate(140, 70)">
+    <path d="M60 0 L120 22 L120 80 Q120 130 60 155 Q0 130 0 80 L0 22 Z" fill="none" stroke="#00e676" stroke-width="1.5" opacity="0.7" filter="url(#glow)"/>
+    <path d="M60 15 L108 33 L108 80 Q108 122 60 144 Q12 122 12 80 L12 33 Z" fill="#00e676" fill-opacity="0.06"/>
+    <!-- Lock inside shield -->
+    <rect x="42" y="72" width="36" height="28" rx="4" fill="none" stroke="#00e676" stroke-width="1.5" opacity="0.8"/>
+    <path d="M48 72 Q48 55 60 55 Q72 55 72 72" fill="none" stroke="#00e676" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="60" cy="86" r="4" fill="#00e676" opacity="0.9"/>
+
+    <!-- Label -->
+    <text x="60" y="175" text-anchor="middle" font-family="monospace" font-size="10" fill="#00e676" opacity="0.7">PQC-GUARD MODEL</text>
+  </g>
+
+  <!-- Neural net nodes -->
+  <g opacity="0.6">
+    <!-- Input layer -->
+    <circle cx="320" cy="100" r="8" fill="none" stroke="#00b4d8" stroke-width="1.5" filter="url(#glow)"/>
+    <circle cx="320" cy="155" r="8" fill="none" stroke="#00b4d8" stroke-width="1.5" filter="url(#glow)"/>
+    <circle cx="320" cy="210" r="8" fill="none" stroke="#00b4d8" stroke-width="1.5" filter="url(#glow)"/>
+    <circle cx="320" cy="265" r="8" fill="none" stroke="#00b4d8" stroke-width="1.5" filter="url(#glow)"/>
+    <circle cx="320" cy="320" r="8" fill="none" stroke="#00b4d8" stroke-width="1.5" filter="url(#glow)"/>
+
+    <!-- Hidden layer 1 -->
+    <circle cx="430" cy="120" r="8" fill="none" stroke="#00e676" stroke-width="1.5" filter="url(#glow)"/>
+    <circle cx="430" cy="185" r="8" fill="none" stroke="#00e676" stroke-width="1.5" filter="url(#glow)"/>
+    <circle cx="430" cy="250" r="8" fill="none" stroke="#00e676" stroke-width="1.5" filter="url(#glow)"/>
+    <circle cx="430" cy="315" r="8" fill="none" stroke="#00e676" stroke-width="1.5" filter="url(#glow)"/>
+
+    <!-- Hidden layer 2 -->
+    <circle cx="540" cy="145" r="8" fill="none" stroke="#00e676" stroke-width="1.5" filter="url(#glow)"/>
+    <circle cx="540" cy="210" r="8" fill="none" stroke="#00e676" stroke-width="1.5" filter="url(#glow)"/>
+    <circle cx="540" cy="275" r="8" fill="none" stroke="#00e676" stroke-width="1.5" filter="url(#glow)"/>
+
+    <!-- Output layer -->
+    <circle cx="650" cy="175" r="9" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="2" filter="url(#glow)"/>
+    <circle cx="650" cy="245" r="9" fill="#00e676" fill-opacity="0.15" stroke="#00e676" stroke-width="2" filter="url(#glow)"/>
+
+    <!-- Connections input→h1 -->
+    <line x1="328" y1="100" x2="422" y2="120" stroke="#00b4d8" stroke-width="0.6" opacity="0.3"/>
+    <line x1="328" y1="155" x2="422" y2="120" stroke="#00b4d8" stroke-width="0.6" opacity="0.3"/>
+    <line x1="328" y1="155" x2="422" y2="185" stroke="#00b4d8" stroke-width="0.6" opacity="0.3"/>
+    <line x1="328" y1="210" x2="422" y2="185" stroke="#00b4d8" stroke-width="0.6" opacity="0.3"/>
+    <line x1="328" y1="210" x2="422" y2="250" stroke="#00b4d8" stroke-width="0.6" opacity="0.3"/>
+    <line x1="328" y1="265" x2="422" y2="250" stroke="#00b4d8" stroke-width="0.6" opacity="0.3"/>
+    <line x1="328" y1="265" x2="422" y2="315" stroke="#00b4d8" stroke-width="0.6" opacity="0.3"/>
+    <line x1="328" y1="320" x2="422" y2="315" stroke="#00b4d8" stroke-width="0.6" opacity="0.3"/>
+    <line x1="328" y1="100" x2="422" y2="185" stroke="#00b4d8" stroke-width="0.3" opacity="0.15"/>
+    <line x1="328" y1="320" x2="422" y2="185" stroke="#00b4d8" stroke-width="0.3" opacity="0.15"/>
+
+    <!-- h1→h2 -->
+    <line x1="438" y1="120" x2="532" y2="145" stroke="#00e676" stroke-width="0.6" opacity="0.3"/>
+    <line x1="438" y1="120" x2="532" y2="210" stroke="#00e676" stroke-width="0.4" opacity="0.2"/>
+    <line x1="438" y1="185" x2="532" y2="145" stroke="#00e676" stroke-width="0.6" opacity="0.3"/>
+    <line x1="438" y1="185" x2="532" y2="210" stroke="#00e676" stroke-width="0.6" opacity="0.3"/>
+    <line x1="438" y1="250" x2="532" y2="210" stroke="#00e676" stroke-width="0.6" opacity="0.3"/>
+    <line x1="438" y1="250" x2="532" y2="275" stroke="#00e676" stroke-width="0.6" opacity="0.3"/>
+    <line x1="438" y1="315" x2="532" y2="275" stroke="#00e676" stroke-width="0.6" opacity="0.3"/>
+
+    <!-- h2→output -->
+    <line x1="548" y1="145" x2="641" y2="175" stroke="#00e676" stroke-width="1" opacity="0.5"/>
+    <line x1="548" y1="210" x2="641" y2="175" stroke="#00e676" stroke-width="1" opacity="0.5"/>
+    <line x1="548" y1="210" x2="641" y2="245" stroke="#00e676" stroke-width="1" opacity="0.5"/>
+    <line x1="548" y1="275" x2="641" y2="245" stroke="#00e676" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- Labels -->
+  <text x="320" y="360" text-anchor="middle" font-family="monospace" font-size="9" fill="#00b4d8" opacity="0.6">INPUT</text>
+  <text x="485" y="360" text-anchor="middle" font-family="monospace" font-size="9" fill="#00e676" opacity="0.6">HIDDEN LAYERS</text>
+  <text x="650" y="280" text-anchor="middle" font-family="monospace" font-size="9" fill="#00e676" opacity="0.6">OUTPUT</text>
+
+  <!-- Output labels -->
+  <text x="666" y="179" font-family="monospace" font-size="9" fill="#00e676" opacity="0.7">MIGRATE</text>
+  <text x="666" y="249" font-family="monospace" font-size="9" fill="#00e676" opacity="0.7">REMEDIATE</text>
+
+  <!-- Top label -->
+  <text x="400" y="40" text-anchor="middle" font-family="monospace" font-size="13" fill="#00e676" opacity="0.85" letter-spacing="3">PQC-GUARD / Phi-2 Fine-Tuned Model</text>
+  <line x1="200" y1="50" x2="600" y2="50" stroke="#00e676" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Corner decorations -->
+  <path d="M10,10 L40,10 L40,14 M10,10 L10,40 L14,40" fill="none" stroke="#00e676" stroke-width="1" opacity="0.4"/>
+  <path d="M790,10 L760,10 L760,14 M790,10 L790,40 L786,40" fill="none" stroke="#00e676" stroke-width="1" opacity="0.4"/>
+  <path d="M10,410 L40,410 L40,406 M10,410 L10,380 L14,380" fill="none" stroke="#00e676" stroke-width="1" opacity="0.4"/>
+  <path d="M790,410 L760,410 L760,406 M790,410 L790,380 L786,380" fill="none" stroke="#00e676" stroke-width="1" opacity="0.4"/>
+</svg>

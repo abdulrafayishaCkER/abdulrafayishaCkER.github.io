@@ -169,9 +169,7 @@ export function CyberBackground() {
       ctx.lineWidth = 0.6;
       ctx.stroke();
       // Sweep gradient
-      const sweepGrad = ctx.createConicalGradient
-        ? null  // not widely available
-        : null;
+     
       void sweepGrad;
       // Manual sweep arc
       ctx.save();

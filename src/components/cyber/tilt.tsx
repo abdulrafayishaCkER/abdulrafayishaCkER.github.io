@@ -11,12 +11,14 @@ export function Tilt({
   const ref = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const initialEl = ref.current;
+    if (!initialEl) return;
 
     function onMove(e: PointerEvent) {
-      // Skip on coarse pointers (mobile)
       if (window.matchMedia("(pointer: coarse)").matches) return;
+
+      const el = ref.current;
+      if (!el) return;
 
       const r = el.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width;
@@ -27,23 +29,37 @@ export function Tilt({
 
       el.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(0)`;
     }
+
     function onLeave() {
-      el.style.transform = "perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0)";
+      const el = ref.current;
+      if (!el) return;
+
+      el.style.transform =
+        "perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0)";
     }
+
+    const el = ref.current;
+    if (!el) return;
 
     el.addEventListener("pointermove", onMove);
     el.addEventListener("pointerleave", onLeave);
 
     return () => {
-      el.removeEventListener("pointermove", onMove);
-      el.removeEventListener("pointerleave", onLeave);
+      const currentEl = ref.current;
+      if (!currentEl) return;
+
+      currentEl.removeEventListener("pointermove", onMove);
+      currentEl.removeEventListener("pointerleave", onLeave);
     };
   }, [max]);
 
   return (
     <div
       ref={ref}
-      className={cn("transition-transform duration-200 will-change-transform", className)}
+      className={cn(
+        "transition-transform duration-200 will-change-transform",
+        className
+      )}
     >
       {children}
     </div>

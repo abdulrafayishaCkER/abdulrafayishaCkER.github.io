@@ -43,7 +43,6 @@ function hexPath(
 export function CyberBackground() {
   const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
   const rafRef = React.useRef<number | null>(null);
-
   const stateRef = React.useRef({
     points: [] as Point[],
     hexes: [] as Hex[],
@@ -55,11 +54,11 @@ export function CyberBackground() {
   });
 
   React.useEffect(() => {
-    const canvasEl = canvasRef.current;
-    if (!canvasEl) return;
+    const initialCanvas = canvasRef.current;
+    if (!initialCanvas) return;
 
-    const ctx = canvasEl.getContext("2d", { alpha: true });
-    if (!ctx) return;
+    const initialCtx = initialCanvas.getContext("2d", { alpha: true });
+    if (!initialCtx) return;
 
     const S = stateRef.current;
 
@@ -78,19 +77,27 @@ export function CyberBackground() {
     }
 
     function resize() {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      const ctx = canvas.getContext("2d", { alpha: true });
+      if (!ctx) return;
+
       S.dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
       S.w = Math.floor(window.innerWidth);
       S.h = Math.floor(window.innerHeight);
 
-      canvasEl.style.width = S.w + "px";
-      canvasEl.style.height = S.h + "px";
-
-      canvasEl.width = Math.floor(S.w * S.dpr);
-      canvasEl.height = Math.floor(S.h * S.dpr);
+      canvas.style.width = S.w + "px";
+      canvas.style.height = S.h + "px";
+      canvas.width = Math.floor(S.w * S.dpr);
+      canvas.height = Math.floor(S.h * S.dpr);
 
       ctx.setTransform(S.dpr, 0, 0, S.dpr, 0, 0);
 
-      const count = Math.max(40, Math.min(90, Math.round((S.w * S.h) / 30000)));
+      const count = Math.max(
+        40,
+        Math.min(90, Math.round((S.w * S.h) / 30000))
+      );
 
       S.points = Array.from({ length: count }).map(() => ({
         x: rand(0, S.w),
@@ -124,39 +131,44 @@ export function CyberBackground() {
 
     resize();
 
-    function drawHex(h: Hex) {
-      const pts = hexPath(h.x, h.y, h.size, h.rotation);
+    function drawHex(ctx: CanvasRenderingContext2D, hex: Hex) {
+      const pts = hexPath(hex.x, hex.y, hex.size, hex.rotation);
 
       ctx.beginPath();
       ctx.moveTo(pts[0][0], pts[0][1]);
-
       for (let i = 1; i < 6; i++) {
         ctx.lineTo(pts[i][0], pts[i][1]);
       }
-
       ctx.closePath();
-      ctx.strokeStyle = `rgba(0,230,120,${h.alpha})`;
+      ctx.strokeStyle = `rgba(0,230,120,${hex.alpha})`;
       ctx.lineWidth = 0.8;
       ctx.stroke();
 
-      const pts2 = hexPath(h.x, h.y, h.size * 0.55, h.rotation + Math.PI / 6);
-
+      const pts2 = hexPath(
+        hex.x,
+        hex.y,
+        hex.size * 0.55,
+        hex.rotation + Math.PI / 6
+      );
       ctx.beginPath();
       ctx.moveTo(pts2[0][0], pts2[0][1]);
-
       for (let i = 1; i < 6; i++) {
         ctx.lineTo(pts2[i][0], pts2[i][1]);
       }
-
       ctx.closePath();
-      ctx.strokeStyle = `rgba(0,180,255,${h.alpha * 0.5})`;
+      ctx.strokeStyle = `rgba(0,180,255,${hex.alpha * 0.5})`;
       ctx.lineWidth = 0.5;
       ctx.stroke();
     }
 
     function step() {
-      const { w, h, points, hexes, pointer } = S;
+      const canvas = canvasRef.current;
+      if (!canvas) return;
 
+      const ctx = canvas.getContext("2d", { alpha: true });
+      if (!ctx) return;
+
+      const { w, h, points, hexes, pointer } = S;
       ctx.clearRect(0, 0, w, h);
 
       if (pointer.x > 0) {
@@ -168,11 +180,9 @@ export function CyberBackground() {
           pointer.y,
           300
         );
-
         g.addColorStop(0, "rgba(0,230,120,0.08)");
         g.addColorStop(0.5, "rgba(0,180,255,0.04)");
         g.addColorStop(1, "rgba(0,0,0,0)");
-
         ctx.fillStyle = g;
         ctx.fillRect(0, 0, w, h);
       }
@@ -184,11 +194,10 @@ export function CyberBackground() {
 
         if (hex.x < -hex.size * 2) hex.x = w + hex.size;
         if (hex.x > w + hex.size * 2) hex.x = -hex.size;
-
         if (hex.y < -hex.size * 2) hex.y = h + hex.size;
         if (hex.y > h + hex.size * 2) hex.y = -hex.size;
 
-        drawHex(hex);
+        drawHex(ctx, hex);
       }
 
       const rcx = w * 0.85;
@@ -196,10 +205,7 @@ export function CyberBackground() {
       const rr = Math.min(w, h) * 0.12;
 
       S.radar += 0.008;
-
-      if (S.radar > Math.PI * 2) {
-        S.radar -= Math.PI * 2;
-      }
+      if (S.radar > Math.PI * 2) S.radar -= Math.PI * 2;
 
       for (let i = 1; i <= 3; i++) {
         ctx.beginPath();
@@ -212,10 +218,8 @@ export function CyberBackground() {
       ctx.beginPath();
       ctx.moveTo(rcx - rr, rcy);
       ctx.lineTo(rcx + rr, rcy);
-
       ctx.moveTo(rcx, rcy - rr);
       ctx.lineTo(rcx, rcy + rr);
-
       ctx.strokeStyle = "rgba(0,230,120,0.08)";
       ctx.lineWidth = 0.6;
       ctx.stroke();
@@ -231,7 +235,6 @@ export function CyberBackground() {
         ctx.moveTo(0, 0);
         ctx.arc(0, 0, rr, angle, angle + 0.04);
         ctx.closePath();
-
         ctx.fillStyle = `rgba(0,230,120,${fade * 0.14})`;
         ctx.fill();
       }
@@ -239,7 +242,6 @@ export function CyberBackground() {
       ctx.beginPath();
       ctx.moveTo(0, 0);
       ctx.lineTo(rr * Math.cos(S.radar), rr * Math.sin(S.radar));
-
       ctx.strokeStyle = "rgba(0,230,120,0.7)";
       ctx.lineWidth = 1.5;
       ctx.stroke();
@@ -258,7 +260,6 @@ export function CyberBackground() {
 
         const dx = pointer.x - p.x;
         const dy = pointer.y - p.y;
-
         const dist = Math.hypot(dx, dy);
 
         if (dist < 180) {
@@ -275,13 +276,11 @@ export function CyberBackground() {
         for (let j = i + 1; j < points.length; j++) {
           const a = points[i];
           const b = points[j];
-
           const d = Math.hypot(a.x - b.x, a.y - b.y);
 
           if (d < 110) {
             ctx.strokeStyle = `rgba(0,230,120,${(1 - d / 110) * 0.14})`;
             ctx.lineWidth = 0.7;
-
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -304,12 +303,10 @@ export function CyberBackground() {
 
       if (pointer.pulse > 0.003) {
         pointer.pulse *= 0.91;
-
         const radius = (1 - pointer.pulse) * 400;
 
         ctx.strokeStyle = `rgba(0,230,120,${pointer.pulse * 0.22})`;
         ctx.lineWidth = 1.5;
-
         ctx.beginPath();
         ctx.arc(pointer.x, pointer.y, radius, 0, Math.PI * 2);
         ctx.stroke();
@@ -322,7 +319,6 @@ export function CyberBackground() {
 
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
-
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerdown", onDown);
@@ -332,7 +328,6 @@ export function CyberBackground() {
   return (
     <div aria-hidden className="fixed inset-0 -z-50">
       <div className="absolute inset-0 bg-[hsl(220_26%_5%)]" />
-
       <div
         className="absolute inset-0"
         style={{
@@ -341,14 +336,8 @@ export function CyberBackground() {
             "radial-gradient(700px circle at 85% 20%, hsl(195 100% 55% / 0.04), transparent 50%)",
         }}
       />
-
       <div className="absolute inset-0 bg-grid opacity-55" />
-
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 h-full w-full"
-      />
-
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[hsl(220_26%_5%/0.55)]" />
       <div className="absolute inset-0 scanlines" />
       <div className="noise" />

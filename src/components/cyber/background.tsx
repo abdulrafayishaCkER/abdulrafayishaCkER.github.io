@@ -170,7 +170,7 @@ export function CyberBackground() {
       ctx.stroke();
       // Sweep gradient
      
-      void sweepGrad;
+ 
       // Manual sweep arc
       ctx.save();
       ctx.translate(rcx, rcy);

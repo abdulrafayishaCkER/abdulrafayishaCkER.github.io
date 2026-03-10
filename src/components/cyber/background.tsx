@@ -46,8 +46,7 @@ export function CyberBackground() {
   React.useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d", { alpha: true });
-    if (!ctx) return;
+    const ctx = canvas.getContext("2d", { alpha: true }) as CanvasRenderingContext2D;
 
     const S = stateRef.current;
 

@@ -1,9 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { ArrowUpRight, Terminal } from "lucide-react";
+import { Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { site } from "@/content/site";
 import { TerminalModal } from "@/components/cyber/terminal";
 import { motion } from "framer-motion";
@@ -103,17 +102,6 @@ export function Navbar() {
               </a>
             ))}
           </nav>
-
-          {/* Resume CTA */}
-          <Button
-            href={site.links.resume}
-            variant="outline"
-            className="hidden sm:inline-flex font-mono text-xs"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Resume <ArrowUpRight className="h-3.5 w-3.5" />
-          </Button>
         </div>
 
         {/* Scroll progress */}

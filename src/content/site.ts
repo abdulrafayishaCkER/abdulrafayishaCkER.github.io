@@ -6,7 +6,6 @@ export const site = {
   links: {
     github: "https://github.com/abdulrafayishaCkER/",
     linkedin: "https://www.linkedin.com/in/abdul-rafay-19437630b/",
-    resume: "/Abdul-Rafay-Resume.pdf",
   },
   tagline:
     "Offensive-minded security researcher and CTF player specializing in penetration testing, red teaming, and the intersection of Post-Quantum Cryptography with Agentic AI.",

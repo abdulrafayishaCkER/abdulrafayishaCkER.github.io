@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { Github, Linkedin, Mail, ArrowUpRight, Shield, Target, Cpu, Radar } from "lucide-react";
+import { Github, Linkedin, Mail, Shield, Target, Cpu, Radar } from "lucide-react";
 import { motion } from "framer-motion";
 import { site } from "@/content/site";
 import { Button } from "@/components/ui/button";
@@ -118,11 +118,6 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <motion.div whileTap={{ scale: 0.97 }}>
               <Button href="#projects">View Projects</Button>
-            </motion.div>
-            <motion.div whileTap={{ scale: 0.97 }}>
-              <Button href={site.links.resume} variant="outline">
-                Resume <ArrowUpRight className="h-4 w-4" />
-              </Button>
             </motion.div>
             {[
               { href: site.links.github,      icon: Github,   label: "GitHub" },

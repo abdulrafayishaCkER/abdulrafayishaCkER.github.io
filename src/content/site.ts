@@ -142,6 +142,6 @@ export const site = {
     title: "Abdul Rafay — Offensive Security Portfolio",
     description:
       "Portfolio of Abdul Rafay: Penetration Tester, CAPT certified, PQC & AI Researcher. Projects include CBOM-style cryptographic asset discovery and Phi-2 fine-tuned PQC assistant.",
-    url: "https://abdulrafay.vercel.app",
+    url: "https://abdulrafay07.netlify.app",
   },
 } as const;

@@ -82,20 +82,6 @@ export const site = {
   ],
   projects: [
     {
-      name: "AI-Guided Penetration Testing Planner",
-      description:
-        "A cybersecurity assessment workflow that uses scan evidence and structured playbooks to recommend the next testing step. The system focuses on reconnaissance, enumeration, validation, policy-gated decisions, confidence scoring, and report-ready evidence.",
-      tags: ["Python", "Local LLM / Qwen", "RAG", "Security Playbooks", "Evidence Reporting", "Policy Gates"],
-      bullets: [
-        "Maps scan results to source-bound playbook steps and safe testing actions.",
-        "Uses confidence scoring, policy gates, and decision receipts to keep recommendations auditable.",
-        "Supports local/Qwen-compatible AI planning while keeping execution controlled and safety-gated.",
-        "Produces evidence-focused outputs for reporting, remediation, and retesting.",
-      ],
-      links: { repo: "", demo: "" },
-      image: "/projects/cbom-builder.svg",
-    },
-    {
       name: "PQC-Guard — Phi-2 Fine-Tuned LLM",
       description:
         "A domain-specific fine-tuned language model built to assist enterprises with Post-Quantum Cryptography migration: policy checks, remediation guidance, and safer crypto defaults.",
@@ -168,7 +154,7 @@ export const site = {
   seo: {
     title: "Abdul Rafay — Offensive Security Portfolio",
     description:
-      "Portfolio of Abdul Rafay: Penetration Tester, CAPT certified, AI security automation builder, and PQC researcher. Projects include an AI-guided pentesting planner, CBOM-style cryptographic asset discovery, and a fine-tuned PQC assistant.",
+      "Portfolio of Abdul Rafay: Penetration Tester, CAPT certified, AI security automation builder, and PQC researcher. Projects include CBOM-style cryptographic asset discovery and a fine-tuned PQC assistant.",
     url: "https://abdulrafay07.netlify.app",
   },
 } as const;

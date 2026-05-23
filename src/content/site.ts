@@ -69,7 +69,7 @@ export const site = {
     },
     {
       title: "Post-Quantum Cryptography & Agentic AI Researcher",
-      org: "Cytomate",
+      org: "Cytomate Solutions and Services",
       location: "Doha, Qatar",
       period: "Jul 2025 — Sep 2025",
       bullets: [
@@ -93,7 +93,7 @@ export const site = {
         "Produces evidence-focused outputs for reporting, remediation, and retesting.",
       ],
       links: { repo: "", demo: "" },
-      image: "/projects/cbom-builder.svg",
+      image: "/projects/ai-guided-pentest-preview.svg",
     },
     {
       name: "PQC-Guard — Phi-2 Fine-Tuned LLM",

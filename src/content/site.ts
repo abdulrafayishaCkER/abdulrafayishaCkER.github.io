@@ -1,6 +1,6 @@
 export const site = {
   name: "Abdul Rafay",
-  role: "Penetration Tester | CAPT | Boot2Root",
+  role: "Penetration Tester | AI Security Automation | CAPT",
   location: "Islamabad, Pakistan",
   email: "abdulrafayjaved58@gmail.com",
   links: {
@@ -8,15 +8,16 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/abdul-rafay-19437630b/",
   },
   tagline:
-    "Offensive-minded security researcher and CTF player specializing in penetration testing, red teaming, and the intersection of Post-Quantum Cryptography with Agentic AI.",
+    "Offensive-minded cybersecurity student focused on penetration testing, vulnerability assessment, Python security automation, and AI-assisted security workflows using structured playbooks, local LLM planning, and evidence-based reporting.",
   about: [
-    "BS Cyber Security student at Air University with a strong focus on practical offensive security, crypto-agility, and evidence-driven security engineering.",
-    "Hands-on experience designing an enterprise-grade PQC compliance lab — covering PKI workflows, TLS/SSH posture validation, CBOM-style asset discovery, and risk register scoring.",
-    "Comfortable operating across red teaming workflows, ML-assisted security tooling, and automation. I build things I can defend under pressure in a technical interview.",
+    "Cyber Security student at Air University focused on practical penetration testing, vulnerability assessment, Python security automation, and AI-assisted cybersecurity workflows.",
+    "Recent work includes contributing to an AI-assisted penetration testing system at Cytomate, where structured playbooks, scan evidence, confidence scoring, policy gates, and decision receipts support safe next-step recommendations and report-ready findings.",
+    "Hands-on experience with PQC and crypto-agility research, including PKI workflows, TLS/SSH posture validation, CBOM-style asset discovery, risk register scoring, and fine-tuned security assistants.",
+    "I build projects that I can explain, test, and defend under pressure: scoped security workflows, repeatable evidence capture, clear technical reporting, and practical automation.",
   ],
   highlights: [
     { label: "Certification", value: "CAPT — Certified Associate Penetration Tester" },
-    { label: "Internship",    value: "Cytomate — PQC & Agentic AI Research (Doha, Qatar)" },
+    { label: "Internship",    value: "Cytomate — AI-Assisted Penetration Testing (Doha, Qatar)" },
     { label: "Education",     value: "BS Cyber Security, Air University (2023–2027)" },
   ],
   skills: {
@@ -55,6 +56,18 @@ export const site = {
   },
   experience: [
     {
+      title: "Penetration Testing Intern",
+      org: "Cytomate Solutions and Services",
+      location: "Doha, Qatar · Remote",
+      period: "Mar 2026 — May 2026",
+      bullets: [
+        "Worked on an AI-assisted penetration testing system focused on authorized, evidence-based security assessment and safe next-step recommendation.",
+        "Helped build and refine playbook-guided testing logic that maps scan evidence to reconnaissance, enumeration, validation, reporting, and retesting actions.",
+        "Supported safety-focused AI planning using structured playbooks, confidence scoring, policy gates, decision receipts, and report-ready evidence.",
+        "Contributed to a local/Qwen-compatible security workflow where AI acts as a bounded planner while tool execution remains controlled through safety checks.",
+      ],
+    },
+    {
       title: "Post-Quantum Cryptography & Agentic AI Researcher",
       org: "Cytomate",
       location: "Doha, Qatar",
@@ -68,6 +81,20 @@ export const site = {
     },
   ],
   projects: [
+    {
+      name: "AI-Guided Penetration Testing Planner",
+      description:
+        "A cybersecurity assessment workflow that uses scan evidence and structured playbooks to recommend the next testing step. The system focuses on reconnaissance, enumeration, validation, policy-gated decisions, confidence scoring, and report-ready evidence.",
+      tags: ["Python", "Local LLM / Qwen", "RAG", "Security Playbooks", "Evidence Reporting", "Policy Gates"],
+      bullets: [
+        "Maps scan results to source-bound playbook steps and safe testing actions.",
+        "Uses confidence scoring, policy gates, and decision receipts to keep recommendations auditable.",
+        "Supports local/Qwen-compatible AI planning while keeping execution controlled and safety-gated.",
+        "Produces evidence-focused outputs for reporting, remediation, and retesting.",
+      ],
+      links: { repo: "", demo: "" },
+      image: "/projects/cbom-builder.svg",
+    },
     {
       name: "PQC-Guard — Phi-2 Fine-Tuned LLM",
       description:
@@ -141,7 +168,7 @@ export const site = {
   seo: {
     title: "Abdul Rafay — Offensive Security Portfolio",
     description:
-      "Portfolio of Abdul Rafay: Penetration Tester, CAPT certified, PQC & AI Researcher. Projects include CBOM-style cryptographic asset discovery and Phi-2 fine-tuned PQC assistant.",
+      "Portfolio of Abdul Rafay: Penetration Tester, CAPT certified, AI security automation builder, and PQC researcher. Projects include an AI-guided pentesting planner, CBOM-style cryptographic asset discovery, and a fine-tuned PQC assistant.",
     url: "https://abdulrafay07.netlify.app",
   },
 } as const;

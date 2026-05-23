@@ -15,7 +15,7 @@ export function Projects() {
         <SectionHeader
           kicker="Projects"
           title="Security tooling built with evidence"
-          subtitle="Two flagship projects in PQC research and cryptographic asset discovery — both oriented toward real enterprise outcomes."
+          subtitle="Flagship projects across AI-assisted penetration testing, security automation, PQC research, and cryptographic asset discovery — all built around evidence, repeatability, and practical security outcomes."
         />
 
         {/*

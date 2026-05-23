@@ -17,7 +17,7 @@ export const site = {
   ],
   highlights: [
     { label: "Certification", value: "CAPT — Certified Associate Penetration Tester" },
-    { label: "Internship",    value: "Cytomate Solutions and Services — AI-Assisted Penetration Testing (Doha, Qatar)" },
+    { label: "Internship",    value: "Cytomate Solutions and Services — AI-Assisted Penetration Testing (Doha, Qatar · Remote)" },
     { label: "Education",     value: "BS Cyber Security, Air University (2023–2027)" },
   ],
   skills: {
@@ -70,7 +70,7 @@ export const site = {
     {
       title: "Post-Quantum Cryptography & Agentic AI Researcher",
       org: "Cytomate Solutions and Services",
-      location: "Doha, Qatar",
+      location: "Doha, Qatar · Remote",
       period: "Jul 2025 — Sep 2025",
       bullets: [
         "Designed and implemented an enterprise-grade PQC compliance & crypto-agility lab with segmented network zones (ADMIN / DMZ / LAN) and full evidence-driven validation pipelines.",

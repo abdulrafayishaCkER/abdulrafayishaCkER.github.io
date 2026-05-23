@@ -13,7 +13,7 @@ const scriptLines = [
   "[SCAN]  capabilities.agentic_ai_research ........... OK",
   "[SCAN]  capabilities.threat_hunting ................ OK",
   "[SCAN]  capabilities.ctf_competition ............... OK",
-  "[INFO]  internship: Cytomate // Doha, Qatar // PQC & AI",
+  "[INFO]  internship: Cytomate Solutions and Services // Doha, Qatar // PQC & AI",
   "[INFO]  certification: CAPT // Hackviser // Feb 2026",
   "[INFO]  education: Air University // BS CyberSec // 2027",
   "",

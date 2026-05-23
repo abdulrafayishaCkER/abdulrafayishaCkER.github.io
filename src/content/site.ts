@@ -11,13 +11,13 @@ export const site = {
     "Offensive-minded cybersecurity student focused on penetration testing, vulnerability assessment, Python security automation, and AI-assisted security workflows using structured playbooks, local LLM planning, and evidence-based reporting.",
   about: [
     "Cyber Security student at Air University focused on practical penetration testing, vulnerability assessment, Python security automation, and AI-assisted cybersecurity workflows.",
-    "Recent work includes contributing to an AI-assisted penetration testing system at Cytomate, where structured playbooks, scan evidence, confidence scoring, policy gates, and decision receipts support safe next-step recommendations and report-ready findings.",
+    "Recent work includes contributing to an AI-assisted penetration testing system at Cytomate Solutions and Services, where structured playbooks, scan evidence, confidence scoring, policy gates, and decision receipts support safe next-step recommendations and report-ready findings.",
     "Hands-on experience with PQC and crypto-agility research, including PKI workflows, TLS/SSH posture validation, CBOM-style asset discovery, risk register scoring, and fine-tuned security assistants.",
     "I build projects that I can explain, test, and defend under pressure: scoped security workflows, repeatable evidence capture, clear technical reporting, and practical automation.",
   ],
   highlights: [
     { label: "Certification", value: "CAPT — Certified Associate Penetration Tester" },
-    { label: "Internship",    value: "Cytomate — AI-Assisted Penetration Testing (Doha, Qatar)" },
+    { label: "Internship",    value: "Cytomate Solutions and Services — AI-Assisted Penetration Testing (Doha, Qatar)" },
     { label: "Education",     value: "BS Cyber Security, Air University (2023–2027)" },
   ],
   skills: {
@@ -93,7 +93,7 @@ export const site = {
         "Produces evidence-focused outputs for reporting, remediation, and retesting.",
       ],
       links: { repo: "", demo: "" },
-      image: "/projects/ai-guided-pentest-preview.svg",
+      image: "https://github.com/user-attachments/assets/5eb13405-894f-49a6-a3b8-4d0188a19a66",
     },
     {
       name: "PQC-Guard — Phi-2 Fine-Tuned LLM",

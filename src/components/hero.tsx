@@ -10,9 +10,9 @@ import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/motion";
 
 const TITLE_PARTS = [
-  "Penetration Tester",
+  "Penetration Tester & AI Security Builder",
   "CAPT Certified",
-  "Boot2Root Player",
+  "Python Security Automation",
   "PQC Researcher",
 ];
 
@@ -108,10 +108,10 @@ export function Hero() {
 
           {/* Badges */}
           <div className="mt-5 flex flex-wrap gap-2">
-            <Badge><Shield  className="h-3.5 w-3.5" /> Penetration Testing</Badge>
-            <Badge><Target  className="h-3.5 w-3.5" /> Red Teaming</Badge>
-            <Badge><Cpu     className="h-3.5 w-3.5" /> Post-Quantum Crypto</Badge>
-            <Badge><Radar   className="h-3.5 w-3.5" /> Agentic AI</Badge>
+            <Badge><Shield className="h-3.5 w-3.5" /> Penetration Testing</Badge>
+            <Badge><Cpu className="h-3.5 w-3.5" /> AI Security Automation</Badge>
+            <Badge><Target className="h-3.5 w-3.5" /> Python Security Tools</Badge>
+            <Badge><Radar className="h-3.5 w-3.5" /> Post-Quantum Crypto</Badge>
           </div>
 
           {/* CTAs */}

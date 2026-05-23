@@ -14,7 +14,7 @@ export function Experience() {
         <SectionHeader
           kicker="Experience"
           title="Real-world research & development"
-          subtitle="Focused on systems enterprises actually care about: cryptographic inventory, blast-radius containment, and controlled post-quantum migration."
+          subtitle="Focused on practical security systems: penetration testing workflows, AI-assisted assessment logic, evidence-driven reporting, cryptographic inventory, and validation."
         />
 
         <div className="relative">

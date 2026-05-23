@@ -1,6 +1,6 @@
 # Abdul Rafay — Cyberpunk Portfolio
 
-> Offensive Security Portfolio · Penetration Tester · CAPT Certified · PQC & AI Researcher
+> Offensive Security Portfolio · Penetration Testing · AI Security Automation · PQC Research
 
 **🌐 Live:** [https://abdulrafay07.netlify.app](https://abdulrafay07.netlify.app)
 

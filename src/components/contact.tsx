@@ -25,7 +25,7 @@ export function Contact() {
         <SectionHeader
           kicker="Contact"
           title="Let's connect"
-          subtitle="Interested in a walkthrough of my PQC research, security tooling, or available for penetration testing roles."
+          subtitle="Interested in a walkthrough of my AI-assisted penetration testing workflow, PQC research, security tooling, or availability for cybersecurity internship and penetration testing roles."
         />
 
         <FadeIn>

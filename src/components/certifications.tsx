@@ -18,8 +18,8 @@ export function Certifications() {
       <div className="container-max">
         <SectionHeader
           kicker="Certifications"
-          title="Validated competencies"
-          subtitle="Industry-recognized credentials across penetration testing, ethical hacking, and cryptography."
+          title="Certifications"
+          subtitle="Verified certifications in penetration testing, ethical hacking, and cryptography."
         />
 
         <div className="grid gap-4 sm:grid-cols-3">

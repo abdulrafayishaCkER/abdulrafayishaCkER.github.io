@@ -13,8 +13,8 @@ export function Experience() {
       <div className="container-max">
         <SectionHeader
           kicker="Experience"
-          title="Real-world research & development"
-          subtitle="Focused on practical security systems: penetration testing workflows, AI-assisted assessment logic, evidence-driven reporting, cryptographic inventory, and validation."
+          title="Professional Experience"
+          subtitle="Experience focused on structured penetration testing workflows, AI-assisted assessment support, and security research documentation."
         />
 
         <div className="relative">

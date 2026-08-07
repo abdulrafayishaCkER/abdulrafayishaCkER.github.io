@@ -13,8 +13,8 @@ export function About() {
       <div className="container-max">
         <SectionHeader
           kicker="About"
-          title="Security that ships and proves itself"
-          subtitle="I build things with clear scope, measurable outcomes, and evidence-driven validation — the kind that holds up in a technical interview."
+          title="About / Education"
+          subtitle="Professional focus on penetration testing and application security, supported by practical reporting and research workflows."
         />
 
         {/* About paragraphs */}
@@ -43,6 +43,9 @@ export function About() {
                   <div>
                     <div className="font-display text-sm font-semibold text-fg">{e.degree}</div>
                     <div className="mt-0.5 font-mono text-xs text-accent2/80">{e.institution}</div>
+                    {"cgpa" in e ? (
+                      <div className="mt-1 font-mono text-xs text-fg/75">CGPA: {e.cgpa}</div>
+                    ) : null}
                     <div className="mt-1.5 flex flex-wrap gap-3 font-mono text-xs text-muted">
                       <span className="flex items-center gap-1"><Calendar className="h-3 w-3" />{e.period}</span>
                       <span className="flex items-center gap-1"><MapPin className="h-3 w-3" />{e.location}</span>

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Mail, Copy, Check, ArrowUpRight, Github, Linkedin } from "lucide-react";
+import { Mail, Copy, Check, ArrowUpRight, Github, Linkedin, Flag } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { FadeIn } from "@/components/motion";
 import { SectionHeader } from "@/components/section-header";
@@ -25,7 +25,7 @@ export function Contact() {
         <SectionHeader
           kicker="Contact"
           title="Let's connect"
-          subtitle="Interested in a walkthrough of my AI-assisted penetration testing workflow, PQC research, security tooling, or availability for cybersecurity internship and penetration testing roles."
+          subtitle="For penetration testing, application security, security automation, or technical security work, connect through email or the professional profiles below."
         />
 
         <FadeIn>
@@ -73,6 +73,16 @@ export function Contact() {
                 >
                   <Github className="h-3.5 w-3.5" />
                   GitHub <ArrowUpRight className="h-3.5 w-3.5" />
+                </Button>
+                <Button
+                  href={site.links.tryhackme}
+                  variant="outline"
+                  className="font-mono text-xs"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Flag className="h-3.5 w-3.5" />
+                  TryHackMe <ArrowUpRight className="h-3.5 w-3.5" />
                 </Button>
               </div>
             </div>

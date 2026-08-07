@@ -1,0 +1,37 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#070b09"/>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1200" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1712"/>
+      <stop offset="1" stop-color="#06110D"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="120" y1="120" x2="1080" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FFC3" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#00B4D8" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="1152" height="672" rx="20" fill="url(#g1)" stroke="#163027" stroke-width="2"/>
+  <rect x="72" y="80" width="1056" height="560" rx="16" fill="#08120E" stroke="#173529"/>
+  <rect x="72" y="80" width="1056" height="58" rx="16" fill="#0D1A15"/>
+  <circle cx="104" cy="109" r="6" fill="#00FFC3"/>
+  <circle cx="126" cy="109" r="6" fill="#00B4D8"/>
+  <circle cx="148" cy="109" r="6" fill="#7CF0FF"/>
+  <text x="186" y="115" fill="#8AA39A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15">cryptorecon scan --target https://example.com --report both</text>
+  <text x="112" y="198" fill="#E6FFF7" font-family="ui-sans-serif, system-ui" font-size="52" font-weight="800">CryptoRecon</text>
+  <text x="112" y="240" fill="#89A89D" font-family="ui-sans-serif, system-ui" font-size="24">TLS • Headers • DNS • Secrets • Exposed Paths</text>
+  <rect x="112" y="284" width="438" height="292" rx="12" fill="#0A1712" stroke="#1D3B31"/>
+  <text x="136" y="320" fill="#00FFC3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">[+] TLS and certificate analysis</text>
+  <text x="136" y="355" fill="#00FFC3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">[+] 70+ exposed-path checks</text>
+  <text x="136" y="390" fill="#00FFC3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">[+] 40+ secret-detection patterns</text>
+  <text x="136" y="425" fill="#00FFC3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">[+] 35+ API endpoint probes</text>
+  <text x="136" y="460" fill="#00FFC3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">[+] DNS and HTTP security checks</text>
+  <text x="136" y="495" fill="#00FFC3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">[+] JSON and HTML reporting</text>
+  <rect x="580" y="284" width="516" height="292" rx="12" fill="#0A1712" stroke="#1D3B31"/>
+  <rect x="610" y="324" width="456" height="20" rx="4" fill="url(#g2)"/>
+  <rect x="610" y="362" width="402" height="20" rx="4" fill="url(#g2)"/>
+  <rect x="610" y="400" width="434" height="20" rx="4" fill="url(#g2)"/>
+  <rect x="610" y="438" width="390" height="20" rx="4" fill="url(#g2)"/>
+  <rect x="610" y="476" width="420" height="20" rx="4" fill="url(#g2)"/>
+  <text x="610" y="312" fill="#8AA39A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">Structured scan findings (severity, evidence, remediation)</text>
+  <text x="112" y="620" fill="#6D8B80" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2">WEB APPLICATION SECURITY / RECONNAISSANCE / REPORTING</text>
+</svg>

@@ -6,11 +6,6 @@ import { SectionHeader } from "@/components/section-header";
 import { Terminal, Flag } from "lucide-react";
 import { site } from "@/content/site";
 
-const PLATFORMS = [
-  { name: "Hack The Box",  handle: "abdulrafay",  color: "text-green-400" },
-  { name: "TryHackMe",     handle: "abdulrafay",  color: "text-red-400"   },
-];
-
 export function CTF() {
   return (
     <Section id="ctf">
@@ -18,7 +13,7 @@ export function CTF() {
         <SectionHeader
           kicker="Practice"
           title={site.ctf.title}
-          subtitle="Sharpening offensive tradecraft through structured competition and hands-on lab practice."
+          subtitle={site.ctf.description}
         />
 
         <FadeIn>
@@ -28,10 +23,10 @@ export function CTF() {
               <div className="flex-1">
                 <div className="mb-4 flex items-center gap-2">
                   <Terminal className="h-4 w-4 text-accent" />
-                  <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">Methodology</span>
+                  <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent">Areas</span>
                 </div>
                 <ul className="space-y-3">
-                  {site.ctf.bullets.map((b, i) => (
+                  {site.ctf.areas.map((b, i) => (
                     <li key={i} className="flex gap-3 text-sm text-fg/80 leading-relaxed">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/70" />
                       <span>{b}</span>
@@ -47,10 +42,22 @@ export function CTF() {
                   <span className="font-mono text-xs font-semibold uppercase tracking-widest text-accent2">Platforms</span>
                 </div>
                 <div className="flex flex-col gap-2">
-                  {PLATFORMS.map((p) => (
-                    <div key={p.name} className="flex items-center gap-3 rounded-lg border border-border/60 bg-card/40 px-4 py-2.5">
-                      <div className={`font-display text-sm font-semibold ${p.color}`}>{p.name}</div>
-                    </div>
+                  {site.ctf.platforms.map((p) => (
+                    p.link ? (
+                      <a
+                        key={p.name}
+                        href={p.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-lg border border-border/60 bg-card/40 px-4 py-2.5 font-display text-sm font-semibold text-fg transition-colors hover:border-accent/40 hover:text-accent"
+                      >
+                        {p.name}
+                      </a>
+                    ) : (
+                      <div key={p.name} className="rounded-lg border border-border/60 bg-card/40 px-4 py-2.5 font-display text-sm font-semibold text-fg">
+                        {p.name}
+                      </div>
+                    )
                   ))}
                 </div>
               </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { FadeIn, Pop } from "@/components/motion";
 import { SectionHeader } from "@/components/section-header";
@@ -14,8 +14,8 @@ export function Projects() {
       <div className="container-max">
         <SectionHeader
           kicker="Projects"
-          title="Security tooling built with evidence"
-          subtitle="Flagship projects across AI-assisted penetration testing, security automation, PQC research, and cryptographic asset discovery — all built around evidence, repeatability, and practical security outcomes."
+          title="Featured Projects"
+          subtitle="Selected projects focused on web security assessment, structured penetration testing workflows, and supporting cryptographic security research."
         />
 
         {/*
@@ -75,33 +75,21 @@ export function Projects() {
                     </ul>
 
                     {/* Footer link — always at the very bottom */}
-                    <div className="mt-auto pt-4 flex flex-wrap gap-2 border-t border-border/30">
-                      {p.links.repo ? (
-                        <Button
-                          href={p.links.repo}
-                          variant="outline"
-                          className="font-mono text-xs"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <Github className="h-3.5 w-3.5" /> Source
-                        </Button>
-                      ) : null}
-                      {p.links.demo ? (
-                        <Button
-                          href={p.links.demo}
-                          variant="outline"
-                          className="font-mono text-xs"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          <ExternalLink className="h-3.5 w-3.5" /> Demo
-                        </Button>
-                      ) : null}
-                      <Button href="#contact" variant="ghost" className="ml-auto font-mono text-xs">
-                        Request walkthrough →
-                      </Button>
-                    </div>
+                    {(p.links.repo || p.links.demo) ? (
+                      <div className="mt-auto pt-4 flex flex-wrap gap-2 border-t border-border/30">
+                        {p.links.repo ? (
+                          <Button
+                            href={p.links.repo}
+                            variant="outline"
+                            className="font-mono text-xs"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <Github className="h-3.5 w-3.5" /> View Repository
+                          </Button>
+                        ) : null}
+                      </div>
+                    ) : null}
                   </div>
 
                 </div>

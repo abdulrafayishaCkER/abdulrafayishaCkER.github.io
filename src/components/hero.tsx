@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { Github, Linkedin, Mail, Shield, Target, Cpu, Radar } from "lucide-react";
+import { Github, Linkedin, Mail, Shield, Target, Cpu, Radar, Flag } from "lucide-react";
 import { motion } from "framer-motion";
 import { site } from "@/content/site";
 import { Button } from "@/components/ui/button";
@@ -10,10 +10,10 @@ import { Badge } from "@/components/ui/badge";
 import { FadeIn } from "@/components/motion";
 
 const TITLE_PARTS = [
-  "Penetration Tester & AI Security Builder",
-  "CAPT Certified",
+  "Web Application Security",
+  "Vulnerability Assessment & Reporting",
   "Python Security Automation",
-  "PQC Researcher",
+  "AI-Assisted Penetration Testing",
 ];
 
 function TypingRole() {
@@ -87,7 +87,7 @@ export function Hero() {
           {/* Kicker */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-3 py-1">
             <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
-            <span className="font-mono text-xs text-accent/80 tracking-widest uppercase">BS Cyber Security · Air University</span>
+            <span className="font-mono text-xs text-accent/80 tracking-widest uppercase">Penetration Testing · Web Application Security</span>
           </div>
 
           {/* Avatar + Name */}
@@ -97,13 +97,17 @@ export function Hero() {
               <h1 className="h1">
                 <span className="glitch neon-text" data-text={site.name}>{site.name}</span>
               </h1>
-              <div className="mt-2"><TypingRole /></div>
+              <div className="mt-2 font-display text-base sm:text-lg text-fg/85">{site.role}</div>
+              <div className="mt-1"><TypingRole /></div>
             </div>
           </div>
 
           {/* Tagline */}
           <p className="mt-7 max-w-2xl text-base sm:text-lg text-fg/65 leading-relaxed font-light">
             {site.tagline}
+          </p>
+          <p className="mt-3 max-w-2xl text-sm sm:text-base text-fg/58 leading-relaxed font-light">
+            {site.taglineSecondary}
           </p>
 
           {/* Badges */}
@@ -122,6 +126,7 @@ export function Hero() {
             {[
               { href: site.links.github,      icon: Github,   label: "GitHub" },
               { href: site.links.linkedin,    icon: Linkedin, label: "LinkedIn" },
+              { href: site.links.tryhackme,   icon: Flag,     label: "TryHackMe" },
               { href: `mailto:${site.email}`, icon: Mail,     label: "Email" },
             ].map(({ href, icon: Icon, label }) => (
               <motion.a

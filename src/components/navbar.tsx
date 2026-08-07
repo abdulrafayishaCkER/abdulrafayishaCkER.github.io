@@ -8,13 +8,13 @@ import { TerminalModal } from "@/components/cyber/terminal";
 import { motion } from "framer-motion";
 
 const nav = [
-  { id: "experience",     label: "Experience"    },
-  { id: "projects",       label: "Projects"      },
-  { id: "certifications", label: "Certifications"},
-  { id: "about",          label: "About"         },
-  { id: "skills",         label: "Skills"        },
-  { id: "ctf",            label: "CTF"           },
-  { id: "contact",        label: "Contact"       },
+  { id: "experience",     label: "Professional Experience" },
+  { id: "projects",       label: "Featured Projects"       },
+  { id: "skills",         label: "Technical Skills"        },
+  { id: "certifications", label: "Certifications"          },
+  { id: "about",          label: "About / Education"       },
+  { id: "ctf",            label: "Hands-On Practice"       },
+  { id: "contact",        label: "Contact"                 },
 ];
 
 function useActiveSection() {

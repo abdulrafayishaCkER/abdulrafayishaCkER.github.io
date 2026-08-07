@@ -6,11 +6,10 @@ import { SectionHeader } from "@/components/section-header";
 import { site } from "@/content/site";
 
 const GROUP_META: Record<string, { label: string; color: string }> = {
-  offensive:          { label: "Offensive Security",       color: "text-accent"  },
-  securityEngineering:{ label: "Security Engineering",     color: "text-accent2" },
-  pqc:               { label: "Post-Quantum Cryptography", color: "text-accent"  },
-  programming:       { label: "Programming & Tools",       color: "text-accent2" },
-  ml:                { label: "AI & Machine Learning",     color: "text-accent"  },
+  offensiveSecurity:     { label: "Offensive Security",        color: "text-accent"  },
+  securityTools:         { label: "Security Tools",            color: "text-accent2" },
+  developmentAutomation: { label: "Development & Automation",  color: "text-accent"  },
+  securityResearch:      { label: "Security Research",         color: "text-accent2" },
 };
 
 export function Skills() {
@@ -21,8 +20,8 @@ export function Skills() {
       <div className="container-max">
         <SectionHeader
           kicker="Skills"
-          title="Tools & areas I operate in"
-          subtitle="Depth over buzzwords — every item listed is something I can discuss technically and back with project evidence."
+          title="Technical Skills"
+          subtitle="Focused capabilities aligned with penetration testing, web application security, and security automation."
         />
 
         <div className="grid gap-4 md:grid-cols-2">
